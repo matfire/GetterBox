@@ -8,7 +8,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "appwrite": "^6.0.1",
     "daisyui": "^1.25.4",
+    "formik": "^2.2.9",
     "next": "12.0.10",
     "react": "17.0.2",
     "react-dom": "17.0.2"
