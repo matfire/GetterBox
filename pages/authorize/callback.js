@@ -1,7 +1,6 @@
-import Lottie from "lottie-react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import boxAnimation from "../../assets/animations/box_packaging.json";
+import toast from "react-hot-toast";
 import { app } from "../../utils/appwrite";
 
 export default function Callback() {
@@ -13,17 +12,16 @@ export default function Callback() {
         console.log(user);
         router.push("/dashboard");
       } catch (error) {
-        //TODO proper error handling
+        toast.error("Could not sign you in...")
+        router.push("/login")
         console.error(error);
       }
     };
     run();
-  }, []);
+  }, [router]);
 
   return (
     <div className="w-full h-full flex flex-col justify-center items-center">
-      {/* <Lottie className="w-1/2 h-1/2" animationData={boxAnimation} />
-       */}
       <p>Signing you in, please wait...</p>
     </div>
   );
