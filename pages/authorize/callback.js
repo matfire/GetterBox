@@ -14,7 +14,6 @@ export default function Callback() {
       } catch (error) {
         toast.error("Could not sign you in...")
         router.push("/login")
-        console.error(error);
       }
     };
     run();

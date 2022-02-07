@@ -7,6 +7,7 @@ import MovieCollection from "../assets/movie_collection.jpg";
 import { useRouter } from "next/router";
 import Google from "../assets/icons/google";
 import Github from "../assets/icons/github";
+import toast from "react-hot-toast";
 
 export default function Register() {
   const router = useRouter();
@@ -20,8 +21,7 @@ export default function Register() {
         await app.account.create("unique()", values.email, values.password);
         router.push("/login");
       } catch (error) {
-        // TODO: proper error handling
-        console.log(error);
+        toast.error("Could not sign you up, please try again")
       }
     },
   });

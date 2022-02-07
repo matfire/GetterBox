@@ -8,6 +8,7 @@ import { AUTH_REDIRECT, BASE_URL } from "../utils/constants";
 import MovieCollection from "../assets/movie_collection.jpg";
 import Google from "../assets/icons/google";
 import Github from "../assets/icons/github";
+import toast from "react-hot-toast";
 
 export default function Login() {
   const router = useRouter();
@@ -21,8 +22,7 @@ export default function Login() {
         await app.account.createSession(values.email, values.password);
         router.push("/dashboard");
       } catch (error) {
-        // TODO: proper error handling
-        console.log(error);
+        toast.error("Could not log you in, please try again");
       }
     },
   });
