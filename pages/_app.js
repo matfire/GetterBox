@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { Toaster } from 'react-hot-toast'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
@@ -8,6 +9,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>GetterBox</title>
       </Head>
+      <Toaster />
       <main>
         <Component {...pageProps} data-theme="dark" />
       </main>
